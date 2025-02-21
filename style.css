@@ -101,6 +101,7 @@ h1 {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  background-color: rgb(235, 241, 235);
 }
 
 footer {
