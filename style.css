@@ -48,6 +48,7 @@ main {
 .content {
   background-color: white;
   border: solid 10px rgb(8, 82, 8);
+  border-radius: 5px;
   margin: 3%;
   padding: 2em;
   width: 40%;
@@ -55,6 +56,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .content-cv {
@@ -65,8 +70,13 @@ main {
 .cv-column {
   background-color: white;
   border: solid 10px rgb(8, 82, 8);
+  border-radius: 5px;
   margin: 3%;
   padding: 2em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .cv-column-1 {
@@ -85,7 +95,12 @@ h1 {
   font-family: "Space Mono", sans-serif;
   padding: 2%;
   border: solid 1px black;
+  border-radius: 5px;
   text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 footer {
@@ -203,7 +218,7 @@ img {
   -o-border-radius: 5px;
 }
 
-@media screen and (width < 630px) {
+@media screen and (width < 625px) {
   .content {
     width: 90%;
   }
@@ -229,5 +244,10 @@ img {
 
   nav a {
     padding: 0;
+  }
+
+  .family-pictures {
+    display: flex;
+    flex-direction: column;
   }
 }
