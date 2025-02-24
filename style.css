@@ -234,4 +234,8 @@ img {
     display: flex;
     flex-direction: column;
   }
+
+  .open-modal-btn {
+    font-size: 12px;
+  }
 }
