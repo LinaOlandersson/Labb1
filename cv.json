@@ -1,0 +1,64 @@
+{
+  "workExperiences": [
+    {
+      "years": "2005-2022",
+      "title": "Laboratorieingenjör Senior",
+      "company": "Södra Innovation",
+      "location": "Väröbacka"
+    },
+    {
+      "years": "2022-2023",
+      "title": "Medicinsk bibliotekarie",
+      "company": "FoU Region halland",
+      "location": "Varberg/Halmstad"
+    },
+    {
+      "years": "2024-Pågår",
+      "title": "Laboratorieingenjör Senior",
+      "company": "Södra Innovation, Väröbacka",
+      "location": "Väröbacka"
+    }
+  ],
+
+  "educations": [
+    {
+      "years": "2001-2005",
+      "subject": [
+        {
+          "subjectName": "Biblioteks- och Informationsvetenskap inklusive magisteruppsats",
+          "points": "80p",
+          "location": "Högskolan i Borås"
+        },
+        {
+          "subjectName": "Biologi",
+          "points": "40p",
+          "location": "Göteborgs universitet"
+        },
+        {
+          "subjectName": "Kemi",
+          "points": "20p",
+          "location": "Göteborgs universitet"
+        },
+        {
+          "subjectName": "Biokemi",
+          "points": "20p",
+          "location": "Göteborgs universitet"
+        }
+      ]
+    },
+    {
+      "years": "2024-Pågår",
+      "subject": [
+        {
+          "subjectName": "Systemutvecklare .NET",
+          "points": "400 YH-poäng",
+          "location": "Campus Varberg"
+        }
+      ]
+    }
+  ],
+
+  "programmingLanguages": ["C# / .NET", "SQL", "HTML / CSS"],
+
+  "others": ["B-körkort"]
+}

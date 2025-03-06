@@ -1,3 +1,58 @@
+document.addEventListener("DOMContentLoaded", getCV);
+
+async function getCV() {
+  try {
+    const response = await fetch("cv.json");
+    if (!response.ok) {
+      throw new Error("Kunde inte hämta data.");
+    }
+    const data = await response.json();
+    showWorkExperiences(data.workExperiences);
+    showEducations(data.educations);
+    showArray(data.programmingLanguages, "programming-languages-list", "p");
+    showArray(data.others, "others-list", "p");
+  } catch (error) {
+    console.log("Ett fel inträffade vid hämtning av data: " + error.message);
+  }
+}
+
+function showWorkExperiences(workExperiences) {
+  const workListElement = document.getElementById("work-experience-list");
+  workExperiences.forEach((we) => {
+    const workElement = document.createElement("section");
+    workElement.innerHTML = `
+    <h4>${we.years}</h4>
+    <p>${we.title},</p>
+    <p>${we.company}, ${we.location}</p>
+    `;
+    workListElement.appendChild(workElement);
+  });
+}
+
+function showEducations(educations) {
+  const educationListElement = document.getElementById("education-list");
+  educations.forEach((e) => {
+    const educationElement = document.createElement("section");
+    const subjectHTML = e.subject
+      .map((s) => `<p>${s.subjectName}, ${s.points}, ${s.location}</p>`)
+      .join("");
+    educationElement.innerHTML = `
+    <h4>${e.years}</h4>
+    <p>${subjectHTML}</p>
+    `;
+    educationListElement.appendChild(educationElement);
+  });
+}
+
+function showArray(property, elementId, createdElement) {
+  const listElement = document.getElementById(elementId);
+  property.forEach((item) => {
+    const element = document.createElement(createdElement);
+    element.innerHTML = `${item}`;
+    listElement.appendChild(element);
+  });
+}
+
 const easteregg = document.getElementById("easteregg");
 var body = document.body;
 
