@@ -35,7 +35,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  background-color: seagreen;
+  /* background-color: seagreen; */
 }
 
 main {
@@ -138,7 +138,8 @@ ul {
   margin-top: 0%;
 }
 
-.modal {
+.modal,
+#easteregg-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -198,7 +199,8 @@ input[type="checkbox"] {
   gap: 10px;
 }
 
-.close-modal {
+.close-modal,
+#easteregg-close-modal {
   font-size: x-large;
   color: red;
 }
