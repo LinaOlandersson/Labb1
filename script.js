@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", getCV);
 document.addEventListener("DOMContentLoaded", getRepos);
 
+// CV-relaterade funktioner. Läsa från .json
+
 async function getCV() {
   try {
     const response = await fetch("cv.json");
@@ -54,6 +56,8 @@ function showArray(property, elementId, createdElement) {
   });
 }
 
+// Kod relaterad till easteregg-funktionerna.
+
 const easteregg = document.getElementById("easteregg");
 var body = document.body;
 
@@ -80,6 +84,8 @@ closeModal.addEventListener("click", function () {
   eastereggModal.style.display = "none";
 });
 
+// Hämtning från GitHub-API
+
 const BASE_URL = "https://api.github.com/users/LinaOlandersson/repos";
 const repoList = document.getElementById("repos");
 
@@ -93,7 +99,7 @@ async function getRepos() {
     displayRepos(data);
   } catch (error) {
     console.log(error);
-    console.error("Error fetching data: ", error);
+    console.error("Ett fel inträffade vid hämtning av data: ", error);
   }
 }
 
