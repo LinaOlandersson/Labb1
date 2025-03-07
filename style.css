@@ -107,7 +107,6 @@ footer p {
 }
 
 h1 {
-  font-family: "Space Mono", sans-serif;
   padding: 2%;
   border: solid 1px black;
   border-radius: 5px;
@@ -240,4 +239,20 @@ img {
   .open-modal-btn {
     font-size: 12px;
   }
+}
+
+.repo-card {
+  background-color: rgb(235, 241, 235);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 3%;
+}
+
+.repo-card p {
+  text-align: left;
 }

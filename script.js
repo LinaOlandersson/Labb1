@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", getCV);
+document.addEventListener("DOMContentLoaded", getRepos);
 
 async function getCV() {
   try {
@@ -78,3 +79,35 @@ document.addEventListener("keydown", function (event) {
 closeModal.addEventListener("click", function () {
   eastereggModal.style.display = "none";
 });
+
+const BASE_URL = "https://api.github.com/users/LinaOlandersson/repos";
+const repoList = document.getElementById("repos");
+
+async function getRepos() {
+  try {
+    const response = await fetch(BASE_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    displayRepos(data);
+  } catch (error) {
+    console.log(error);
+    console.error("Error fetching data: ", error);
+  }
+}
+
+function displayRepos(data) {
+  data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  data.forEach((repo) => {
+    if (repo.visibility === "public") {
+      const repoElement = document.createElement("div");
+      repoElement.className = "repo-card";
+      repoElement.innerHTML = `
+      <a href="${repo.html_ref}"><h4>${repo.name}</h4></a>
+      <p>${repo.description}</p>
+      `;
+      repoList.appendChild(repoElement);
+    }
+  });
+}
