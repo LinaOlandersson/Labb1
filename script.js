@@ -110,7 +110,7 @@ function displayRepos(data) {
       const repoElement = document.createElement("div");
       repoElement.className = "repo-card";
       repoElement.innerHTML = `
-      <a href="${repo.html_ref}"><h4>${repo.name}</h4></a>
+      <a href="${repo.html_url}" target = "_blank"><h4>${repo.name}</h4></a>
       <p>${repo.description}</p>
       `;
       repoList.appendChild(repoElement);
