@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", getCV);
-document.addEventListener("DOMContentLoaded", getRepos);
+//document.addEventListener("DOMContentLoaded", getCV);
+//document.addEventListener("DOMContentLoaded", getRepos);
 
 // CV-relaterade funktioner. Läsa från .json
 
@@ -56,16 +56,17 @@ function showArray(property, elementId, createdElement) {
   });
 }
 
+getCV();
+
 // Kod relaterad till easteregg-funktionerna.
 
 const easteregg = document.getElementById("easteregg");
-var body = document.body;
 
 easteregg.addEventListener("click", function () {
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
   let b = Math.floor(Math.random() * 256);
-  body.style.backgroundColor = `rgb(${r} ${g} ${b})`;
+  document.body.style.backgroundColor = `rgb(${r} ${g} ${b})`;
 });
 
 let eggInput = "";
@@ -91,7 +92,7 @@ const repoList = document.getElementById("repos");
 
 async function getRepos() {
   try {
-    repoList.innerText = "Laddar repos...";
+    repoList.innerHTML = `<p>Laddar repos...</p>`;
     const response = await fetch(BASE_URL);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -105,8 +106,8 @@ async function getRepos() {
 }
 
 function displayRepos(data) {
+  repoList.innerHTML = "";
   data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-  repoList.innerText = "";
   data.forEach((repo) => {
     if (repo.visibility === "public") {
       const repoElement = document.createElement("div");
@@ -119,3 +120,5 @@ function displayRepos(data) {
     }
   });
 }
+
+getRepos();
