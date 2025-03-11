@@ -91,6 +91,7 @@ const repoList = document.getElementById("repos");
 
 async function getRepos() {
   try {
+    repoList.innerText = "Laddar repos...";
     const response = await fetch(BASE_URL);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -105,6 +106,7 @@ async function getRepos() {
 
 function displayRepos(data) {
   data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  repoList.innerText = "";
   data.forEach((repo) => {
     if (repo.visibility === "public") {
       const repoElement = document.createElement("div");
